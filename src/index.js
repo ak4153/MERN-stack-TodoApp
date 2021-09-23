@@ -63,6 +63,7 @@ class TodoBoard extends React.Component {
                 dbId={todo.dbId}
                 onClickEditTodo={this.onClickEditTodo}
                 getDataFromDB={this.getDataFromDB}
+                dateCreated={todo.dateCreated}
               ></Todo>
             );
           else return "";
@@ -121,8 +122,9 @@ class TodoBoard extends React.Component {
     this.setState({ reload: !this.state.reload });
   }
 
-  onClickEditTodo(editedTodo, todoId) {
+  onClickEditTodo(editedTodo, todoId, dbId, dateCreated) {
     if (editedTodo !== "") {
+      this.editTodoInDB(todoId, dbId, editedTodo, dateCreated);
       const todoArrayToSave = this.state.todosArray.map((todo) => {
         if (todo.todoId === todoId) {
           todo.todoText = editedTodo;
@@ -169,6 +171,14 @@ class TodoBoard extends React.Component {
     Axios.delete(`https://todo4153.herokuapp.com/delete/${dbId}`);
     this.forceUpdate();
   }
+  editTodoInDB(todoId, dbId, textToEdit, dateCreated) {
+    Axios.put(`https://todo4153.herokuapp.com/update`, {
+      dbId: dbId,
+      textToEdit: textToEdit,
+      todoId: todoId,
+      dateCreated: dateCreated,
+    });
+  }
 }
 
 class Todo extends React.Component {
@@ -198,7 +208,12 @@ class Todo extends React.Component {
         </button>
         <button
           onClick={() =>
-            this.props.onClickEditTodo(this.state.edit, this.props.todoId)
+            this.props.onClickEditTodo(
+              this.state.edit,
+              this.props.todoId,
+              this.props.dbId,
+              this.props.dateCreated
+            )
           }
           id={this.props.todoId}
           className="todoButtons"
