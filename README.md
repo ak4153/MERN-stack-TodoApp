@@ -1,5 +1,5 @@
-MERN stack todo app
-<a>https://naughty-rosalind-443ea7.netlify.app/</a>
+MERN stack todo app <br>
+<a>https://naughty-rosalind-443ea7.netlify.app/</a> <br>
 TODO:add edit functionality
 
 #Getting Started with Create React App
