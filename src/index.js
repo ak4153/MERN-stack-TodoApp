@@ -28,7 +28,7 @@ class TodoBoard extends React.Component {
     let todoText;
     let todoId;
     let dbId;
-    Axios.get("http://localhost:3001/read").then((response) => {
+    Axios.get("https://todo4153.herokuapp.com/read").then((response) => {
       if (response.data.length > 0) {
         for (let i = 0; i < response.data.length; i++) {
           dateCreated = response.data[i].todosArray.dateCreated;
