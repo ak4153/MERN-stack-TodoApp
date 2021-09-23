@@ -158,7 +158,7 @@ class TodoBoard extends React.Component {
   //   this.getDataFromDB();
   // }
   updateDB(todoText, todoId, dateCreated) {
-    Axios.post("http://localhost:3001/insert", {
+    Axios.post("https://todo4153.herokuapp.com/insert", {
       todoText: todoText,
       todoId: todoId,
       dateCreated: dateCreated,
@@ -166,7 +166,7 @@ class TodoBoard extends React.Component {
   }
   removeFromDB(dbId) {
     console.log(dbId);
-    Axios.delete(`http://localhost:3001/delete/${dbId}`);
+    Axios.delete(`https://todo4153.herokuapp.com/delete/${dbId}`);
     this.forceUpdate();
   }
 }
