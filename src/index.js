@@ -1,8 +1,7 @@
-import { Style } from "./index.css";
+import "../src/index.css";
 import reactDom from "react-dom";
 import React from "react";
 import Axios from "axios";
-import { throws } from "assert";
 
 class TodoBoard extends React.Component {
   constructor(props) {
