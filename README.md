@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+MERN stack todo app
+<a>https://naughty-rosalind-443ea7.netlify.app/</a>
+TODO:add edit functionality
+
+#Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
