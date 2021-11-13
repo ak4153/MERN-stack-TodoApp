@@ -1,6 +1,7 @@
 Fully Functional MERN stack todo app <br>
 <a>https://naughty-rosalind-443ea7.netlify.app/</a> <br>
-
+<h1>Technologies used:</h1>
+<p>Axios, mongoose, reactjs</p>
 
 #Getting Started with Create React App
 
